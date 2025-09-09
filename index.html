@@ -7,28 +7,49 @@
     body {
       margin: 0;
       background: #111;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      align-items: center;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth; /* גלילה חלקה */
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 20px;
       padding: 20px;
     }
-    img, video {
-      max-width: 400px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+
+    .gallery img,
+    .gallery video {
+      width: 100%;
+      height: auto;
+      border-radius: 15px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.7);
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover,
+    .gallery video:hover {
+      transform: scale(1.05); /* אפקט hover קטן */
     }
   </style>
 </head>
 <body>
-  <!-- תמונה -->
-  <img src="image1.jpg" alt="">
-  <img src="image2.jpg" alt="">
+  <div class="gallery">
+    <!-- תמונות -->
+    <img src="image1.jpg" alt="">
+    <img src="image2.jpg" alt="">
+    <img src="image3.jpg" alt="">
 
-  <!-- וידאו -->
-  <video controls>
-    <source src="video1.mp4" type="video/mp4">
-  </video>
+    <!-- סרטון -->
+    <video controls>
+      <source src="video1.mp4" type="video/mp4">
+    </video>
+
+    <video controls>
+      <source src="video2.mp4" type="video/mp4">
+    </video>
+  </div>
 </body>
 </html>
